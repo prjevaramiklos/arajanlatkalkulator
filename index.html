@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WXVFM222');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Árajánlatkészítő – Profi árajánlat, két perc alatt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* A stílusok változatlanok maradtak */
+:root {
+--paper: #EEF0EA;
+--card: #FBFBF8;
+--ink: #1E2320;
+--muted: #5C6259;
+--line: #C9CDC0;
+--accent: #C0392B;
+--accent-dark: #8F2A1E;
+--mono: 'IBM Plex Mono', monospace;
+--sans: 'IBM Plex Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+margin: 0;
+font-family: var(--sans);
+color: var(--ink);
+background-color: var(--paper);
+background-image: repeating-linear-gradient(
+to bottom,
+transparent,
+transparent 39px,
+rgba(30, 35, 32, 0.05) 40px
+);
+line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.wrap {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 24px;
+}
+
+.eyebrow {
+font-family: var(--mono);
+font-size: 0.85rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--accent-dark);
+display: inline-flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 18px;
+}
+.eyebrow::before {
+content: '';
+width: 22px;
+height: 2px;
+background: var(--accent);
+display: inline-block;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+padding: 90px 0 70px;
+}
+.hero-grid {
+display: grid;
+grid-template-columns: 1.05fr 0.95fr;
+gap: 64px;
+align-items: center;
+}
+h1 {
+font-family: var(--mono);
+font-size: 3rem;
+line-height: 1.12;
+letter-spacing: -0.01em;
+margin: 0 0 22px;
+font-weight: 700;
+}
+.hero-sub {
+font-size: 1.15rem;
+color: var(--muted);
+max-width: 46ch;
+margin-bottom: 34px;
+}
+
+.stamp-btn {
+display: inline-block;
+background: var(--accent);
+color: #fff;
+font-family: var(--mono);
+font-weight: 600;
+font-size: 1.05rem;
+padding: 17px 32px;
+border-radius: 6px;
+text-decoration: none;
+letter-spacing: 0.01em;
+box-shadow: 4px 4px 0 var(--accent-dark);
+transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.stamp-btn:hover {
+transform: translate(2px, 2px);
+box-shadow: 2px 2px 0 var(--accent-dark);
+}
+
+.hero-doc {
+position: relative;
+}
+.hero-doc-frame {
+background: var(--card);
+border: 1px solid var(--line);
+border-radius: 10px;
+padding: 10px;
+box-shadow: 0 24px 40px -18px rgba(30, 35, 32, 0.35);
+transform: rotate(1.2deg);
+}
+.hero-doc-frame img {
+display: block;
+width: 100%;
+border-radius: 5px;
+}
+.stamp {
+position: absolute;
+top: -22px;
+right: -18px;
+width: 118px;
+height: 118px;
+border-radius: 50%;
+border: 3px dashed var(--accent);
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+transform: rotate(-14deg);
+background: rgba(238, 240, 234, 0.9);
+}
+.stamp span {
+font-family: var(--mono);
+font-weight: 700;
+font-size: 0.78rem;
+letter-spacing: 0.05em;
+color: var(--accent-dark);
+text-transform: uppercase;
+line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+.hero-grid { grid-template-columns: 1fr; }
+h1 { font-size: 2.2rem; }
+.hero-doc-frame { transform: none; margin-top: 30px; }
+.stamp { top: -16px; right: 8px; width: 96px; height: 96px; }
+}
+
+/* ---------- TEAR DIVIDER ---------- */
+.tear {
+position: relative;
+height: 2px;
+border-top: 2px dashed var(--line);
+max-width: 1100px;
+margin: 10px auto;
+}
+.tear::before, .tear::after {
+content: '';
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: var(--paper);
+border: 1px solid var(--line);
+}
+.tear::before { left: -9px; }
+.tear::after { right: -9px; }
+
+/* ---------- LEDGER FEATURES ---------- */
+.ledger {
+padding: 80px 0;
+}
+.ledger h2 {
+font-family: var(--mono);
+font-size: 2.1rem;
+margin: 0 0 44px;
+font-weight: 700;
+}
+.ledger-row {
+display: grid;
+grid-template-columns: 56px 1fr;
+gap: 22px;
+padding: 26px 0;
+border-bottom: 1px solid var(--line);
+align-items: baseline;
+}
+.ledger-row:first-of-type { border-top: 1px solid var(--line); }
+.ledger-num {
+font-family: var(--mono);
+font-weight: 700;
+font-size: 1.1rem;
+color: var(--accent);
+}
+.ledger-title {
+font-weight: 600;
+font-size: 1.15rem;
+margin: 0 0 6px;
+}
+.ledger-desc {
+color: var(--muted);
+margin: 0;
+max-width: 62ch;
+}
+
+@media (max-width: 600px) {
+.ledger-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* ---------- DEMO / TEMPLATE ---------- */
+.demo { padding: 80px 0; }
+.demo h2 {
+font-family: var(--mono);
+font-size: 2.1rem;
+margin: 0 0 34px;
+font-weight: 700;
+}
+.video-frame {
+display: block;
+position: relative;
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid var(--line);
+box-shadow: 0 18px 32px -18px rgba(30,35,32,0.3);
+text-decoration: none;
+}
+.video-frame img { width: 100%; display: block; }
+.play-badge {
+position: absolute;
+top: 50%; left: 50%;
+transform: translate(-50%, -50%);
+width: 78px; height: 78px;
+background: rgba(30, 35, 32, 0.75);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+color: #fff; font-size: 1.6rem;
+}
+
+.attachment {
+margin-top: 40px;
+background: var(--card);
+border: 1px solid var(--line);
+border-radius: 10px;
+padding: 32px 36px;
+}
+.attachment .eyebrow { margin-bottom: 12px; }
+.attachment p { color: var(--muted); margin: 10px 0 18px; max-width: 60ch; }
+.attachment a.template-link {
+font-family: var(--mono);
+font-weight: 600;
+color: var(--accent-dark);
+text-decoration: none;
+border-bottom: 2px solid var(--accent);
+padding-bottom: 2px;
+}
+
+/* ---------- RECEIPT TOTAL / PRICING ---------- */
+.receipt {
+padding: 70px 0 90px;
+}
+.receipt-box {
+max-width: 480px;
+margin: 0 auto;
+background: var(--card);
+border: 1px solid var(--line);
+border-radius: 10px;
+padding: 40px 40px 34px;
+box-shadow: 0 20px 36px -20px rgba(30,35,32,0.3);
+}
+.receipt-line {
+display: flex;
+justify-content: space-between;
+font-family: var(--mono);
+font-size: 0.95rem;
+color: var(--muted);
+padding: 7px 0;
+}
+.receipt-total {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+font-family: var(--mono);
+font-weight: 700;
+font-size: 1.5rem;
+border-top: 2px dashed var(--ink);
+margin-top: 14px;
+padding-top: 16px;
+}
+.receipt-box .stamp-btn {
+display: block;
+text-align: center;
+margin-top: 26px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+text-align: center;
+padding: 40px 0 60px;
+color: var(--muted);
+font-size: 0.95rem;
+}
+footer strong { color: var(--ink); }
+footer .receipt-footer-note {
+font-family: var(--mono);
+font-size: 0.8rem;
+letter-spacing: 0.05em;
+margin-top: 14px;
+color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXVFM222"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Árajánlat</div>
+<h1>Profi árajánlat.<br>Két perc. Kész.</h1>
+<p class="hero-sub">Írd be kézzel a tételeket, vagy importáld a teljes terméklistád egy kattintással. A kalkulátor azonnal nyomtatásra kész PDF-et ad a kezedbe.</p>
+<a href="https://buy.stripe.com/9B600kbRY1pj2HCgWbenS03" class="stamp-btn">Vásárlás egy pizza áráért 🍕</a>
+</div>
+<div class="hero-doc">
+<div class="hero-doc-frame">
+<img src="kep1.png" alt="Az árajánlatkészítő felülete">
+</div>
+<div class="stamp"><span>Kész<br>2 perc<br>alatt</span></div>
+</div>
+</div>
+</section>
+
+<div class="tear"></div>
+
+<section class="ledger">
+<div class="wrap">
+<div class="eyebrow">Tételek</div>
+<h2>Mit tartalmaz a csomag?</h2>
+
+<div class="ledger-row">
+<div class="ledger-num">01</div>
+<div>
+<p class="ledger-title">Villámgyors indítás</p>
+<p class="ledger-desc">Megnyitod a böngészőben, és már készítheted is az ajánlatot — telepítés nélkül.</p>
+</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-num">02</div>
+<div>
+<p class="ledger-title">Kétféle feltöltés</p>
+<p class="ledger-desc">Írd be kézzel a tételeket, vagy importáld a teljes terméklistád egy kattintással.</p>
+</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-num">03</div>
+<div>
+<p class="ledger-title">Saját arculat</p>
+<p class="ledger-desc">Tedd rá a logódat, így az ajánlat rögtön a márkádat képviseli.</p>
+</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-num">04</div>
+<div>
+<p class="ledger-title">Bármikor módosítható</p>
+<p class="ledger-desc">Javíts árat, mennyiséget vagy leírást, a végösszeg magától frissül.</p>
+</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-num">05</div>
+<div>
+<p class="ledger-title">Nyomtatásra kész PDF</p>
+<p class="ledger-desc">Egyetlen kattintással exportálhatod az ajánlataidat.</p>
+</div>
+</div>
+<div class="ledger-row">
+<div class="ledger-num">06</div>
+<div>
+<p class="ledger-title">Helyben marad az adat</p>
+<p class="ledger-desc">Semmi nem kerül fel szerverre, minden a te gépeden történik és ott is marad.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="tear"></div>
+
+<section class="demo">
+<div class="wrap">
+<div class="eyebrow">Demó</div>
+<h2>Nézd meg, hogyan működik</h2>
+
+<a href="https://youtu.be/6YuoV1SnVzE" target="_blank" class="video-frame">
+<img src="https://img.youtube.com/vi/6YuoV1SnVzE/maxresdefault.jpg" alt="Videó megtekintése">
+<div class="play-badge">▶</div>
+</a>
+
+<div class="attachment">
+<div class="eyebrow">Melléklet</div>
+<p style="font-weight:600; color:var(--ink); font-size:1.15rem; margin-top:0;">Szeretnél terméklistából dolgozni?</p>
+<p>Töltsd le a sablonunkat. Egyszer állítsd be a tételeidet, utána bármikor egy kattintással beillesztheted őket a kalkulátorba.</p>
+<a href="https://docs.google.com/spreadsheets/d/1Y8d116GUVj3l91lYS17IvFLfqdottxmHI3mfI0Xj8yM/edit?usp=sharing" class="template-link" target="_blank">→ A sablon letöltése</a>
+</div>
+</div>
+</section>
+
+<div class="tear"></div>
+
+<section class="receipt">
+<div class="wrap">
+<div class="receipt-box">
+<div class="eyebrow" style="margin-bottom:20px;">Végösszeg</div>
+<div class="receipt-line"><span>Fejlesztés</span><span>felesleges</span></div>
+<div class="receipt-line"><span>Túlbonyolítás</span><span>nulla</span></div>
+<div class="receipt-line"><span>Kávészünet</span><span>belefér</span></div>
+<div class="receipt-total"><span>Összesen</span><span>1 pizza ára 🍕</span></div>
+<a href="https://buy.stripe.com/9B600kbRY1pj2HCgWbenS03" class="stamp-btn">Megveszem →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<p>Kérdésed van a működéssel kapcsolatban?<br>Írj nekünk bizalommal: <strong>hello@klikkprofit.hu</strong></p>
+<div class="receipt-footer-note">*** köszönjük, hogy minket választottál ***</div>
+</footer>
+
+</body>
+</html>
